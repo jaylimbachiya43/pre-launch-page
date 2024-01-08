@@ -1,13 +1,15 @@
-import React from 'react'
-
+// components/Footer.jsx
 const Footer = () => {
-  return (
-  
-     <footer className=" w-screen bg-black mt-auto py-4 text-center text-white">
-        All rights reserved 2024
+    return (
+      <footer className="bg-black rounded-t-2xl text-white p-4">
+        <div className="container mx-auto text-center">
+          <p className="text-sm sm:text-base">
+            All rights reserved &copy; 2024
+          </p>
+        </div>
       </footer>
-
-  )
-}
-
-export default Footer
+    );
+  };
+  
+  export default Footer;
+  

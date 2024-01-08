@@ -4,8 +4,8 @@ import PreLaunchPage from '@/components/PreLaunchPage'
 
 export default function Home() {
   return (
-    <main className='h-screen '>
-      <section className=''>
+    <main className=' '>
+      <section className='h-[100vh]'>
 
         
  <PreLaunchPage/>

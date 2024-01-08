@@ -1,0 +1,76 @@
+/* styles/animations.css */
+@keyframes zoomOut {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+  
+  .zoom-out-animation {
+    animation: zoomOut 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  }
+  
+  .flip-container {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+  
+  .flipped {
+    transform: rotateY(180deg);
+  }
+
+  .bgBlur {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    @apply p-3;
+  }
+
+  .animate {
+	animation: fadein 1s ease-out;
+	/* transform-style: preserve-3d; */
+	transform-origin: right;
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+		transform: translate(0%) rotateY(-120deg);
+	}
+	100% {
+		opacity: 100%;
+		transform: translate(0%) rotateY(0);
+	}
+}
+
+
+/* text  */
+
+.title {
+    @apply flex flex-col text-center items-center gap-8 2xl:px-8;
+  }
+  .description {
+    @apply max-w-3xl line-clamp-3;
+  }
+  
+  .flipX {
+    animation: 1s anim-flipX ease;
+  }
+  
+  @keyframes anim-flipX {
+    0% {
+      opacity: 0;
+      transform: rotateX(90deg);
+    }
+    50% {
+      opacity: 1;
+      transform: rotateX(0);
+    }
+    100% {
+      /* animate nothing to pause animation at the end */
+      opacity: 1;
+      transform: rotateX(0);
+    }
+  }
