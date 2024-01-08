@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import "./prelaunchpage.css";
-import { BsChevronRight } from 'react-icons/bs';
+import { TbPlayerTrackNext } from "react-icons/tb";
 const PreLaunchPage = () => {
   const [showContent, setShowContent] = useState(false);
-  // const [isFlipped, setIsFlipped] = useState(false);
+ 
   useEffect(() => {
-    // Simulate video end event
+
     const videoElement = document.getElementById("launchVideo");
     videoElement.addEventListener("ended", () => {
       const model = document.getElementById("button");
@@ -27,13 +27,12 @@ const PreLaunchPage = () => {
           >
             <div className="max-w-5xl rounded-2xl">
               <button
-                className=" text-[#Ffd700] font-bold items-center animate-pulse duration-300  flex gap-0  px-4 py-2 mt-4 rounded-md"
+                className=" text-[#Ffd700] bg-white bg-opacity-10  font-bold items-center animate-pulse duration-300  flex flex-col gap-1  px-4 py-2 mt-4 rounded-md"
                 onClick={flipPage}
               >
-            subscribe 
-                            <BsChevronRight size="2em" color="gold"/>
-                 <BsChevronRight  size="2em" color="gold"/>
-                 <BsChevronRight  size="2em" color="gold"/>
+            Click Hear to Subscribe 
+                            <TbPlayerTrackNext size="2em" color="gold"/>
+                
               </button>
             </div>
             <button className="absolute top-6 right-6 text-white">
@@ -49,7 +48,7 @@ const PreLaunchPage = () => {
       </div> */}
         {!showContent && (
           <>
-            <div className=" border border-black max-w-4xl rounded-3xl shadow-black shadow-lg overflow-hidden  mx-2 md:mx-6  lg:mx-10 ">
+            <div className={` border border-black max-w-4xl rounded-3xl shadow-black shadow-lg overflow-hidden  mx-2 md:mx-6  lg:mx-10  ${showContent ? "animate" : ""}`}>
               <video
                 id="launchVideo"
                 className="w-full h-full object-cover"
@@ -87,13 +86,13 @@ const PreLaunchPage = () => {
       Coming up with our exclusive range of beauty elixirs, bath care Products, and hi-tech beauty accessories that cater to the redefined tastes of the discerning connoisseur.
     </p>
   </div>
-  <div className="pb-3">
+  <div className="pb-5">
     <h1 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-4">
       AT FLEURVEDA, LUXURY MEETS PURITY, AND CARE BECOMES AN ART!
     </h1>
   </div>
   <div>
-    <p className="text-sm md:text-base">
+    <p className="text-lg font-semibold md:text-base ">
       Subscribe to our newsletter for upcoming updates and exclusive insights!
     </p>
   </div>
@@ -106,58 +105,3 @@ const PreLaunchPage = () => {
 };
 
 export default PreLaunchPage;
-
-// components/PreLaunchPage.jsx
-// import { useEffect, useState } from 'react';
-
-// const PreLaunchPage = () => {
-//   const [showContent, setShowContent] = useState(false);
-
-//   useEffect(() => {
-//     // Simulate video end event
-//     const videoElement = document.getElementById('launchVideo');
-//     videoElement.addEventListener('ended', () => {
-//       setShowContent(true);
-//     });
-//   }, []);
-
-//   const flipPage = () => {
-//     // Add logic to flip the page
-//     console.log('Page flipped!');
-//     setShowContent(!showContent);
-//   };
-
-//   return (
-//     <div className="flex flex-col items-center justify-center my-4 mx-3 md:mx-10 md:my-10 lg:my-14 lg:mx-10 h-screen">
-//       {!showContent && (
-//         <>
-//           <div className="relative w-full h-96 overflow-hidden">
-//             <video
-//               id="launchVideo"
-//               className="w-full h-full object-cover transition-all duration-500"
-//               autoPlay
-//               controls
-//             >
-//               <source src="/videos/Fleurveda_Final.mp4" type="video/mp4" />
-//               Your browser does not support the video tag.
-//             </video>
-//             <button
-//               className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-md absolute bottom-0 transform transition-all duration-500 hover:translate-y-0.5"
-//               onClick={flipPage}
-//             >
-//               Learn More
-//             </button>
-//           </div>
-//         </>
-//       )}
-//       {showContent && (
-//         <div className="text-center bg-black text-white">
-//           <h1 className="text-3xl font-bold mb-4">Our New App is Launching!</h1>
-//           <p>Please subscribe for the latest updates.</p>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default PreLaunchPage;
