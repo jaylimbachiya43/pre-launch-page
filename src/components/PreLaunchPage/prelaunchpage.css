@@ -1,16 +1,16 @@
 /* styles/animations.css */
-@keyframes zoomOut {
+/* @keyframes zoomOut {
     0% {
       transform: scale(1);
     }
     100% {
-      transform: scale(0.9);
+      transform: scale(1.7);
     }
-  }
+  } */
   
-  .zoom-out-animation {
+  /* .zoom-out-animation {
     animation: zoomOut 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  }
+  } */
   
   .flip-container {
     perspective: 1000px;
