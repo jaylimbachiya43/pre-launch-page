@@ -101,14 +101,14 @@ const PreLaunchPage = () => {
 <div className="">
           <h1 className="text-2xl mb-4">Fleurveda introduces</h1>
           <p className="text-sm mb-4">
-            a precise fusion of Science and Ayurveda, transcending the ordinary to elevate your self-care experience!
+            A precise fusion of Science and Ayurveda, transcending the ordinary to elevate your self-care experience!
           </p>
           <p className="text-sm mb-4">
             Coming up with our exclusive range of beauty elixirs, bath care Products, and hi-tech beauty accessories that
             cater to the redefined tastes of the discerning connoisseur.
           </p>
           <h3 className="font-normal mb-4 text-yellow-800">
-            AT FLEURVEDA, LUXURY MEETS PURITY,<br /> AND CARE BECOMES AN ART!
+            AT FLEURVEDA, LUXURY MEETS PURITY<br /> AND CARE BECOMES AN ART!
           </h3>
           <p className="text-xs text-gray-600 mb-4">
             Subscribe to our newsletter for upcoming updates and exclusive insights!
@@ -120,9 +120,9 @@ const PreLaunchPage = () => {
           <input
             type="email"
             placeholder="Your Email"
-            className="p-2 w-40 border  border-gray-300 rounded-full outline-none text-xs"
+            className="py-3 px-4  border text-sm font-medium border-gray-300 rounded-full outline-none "
           />
-           <button className ="  subscribe-btn">Subscribe</button>
+           <button className =" py-3 px-8 rounded-full bg-gradient-to-r from-yellow-500 to-yellow-800 text-white text-sm font-medium outline-none cursor-pointer">Subscribe</button>
         </div>
 </div>
    
