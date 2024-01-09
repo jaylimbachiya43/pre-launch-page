@@ -62,8 +62,8 @@ const PreLaunchPage = () => {
               <video
                 id="launchVideo"
                 className="w-full h-full object-cover"
-               autoPlay
                 loop={false}
+               autoPlay
               >
                 <source src="/videos/Fleurveda_Final.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
