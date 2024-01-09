@@ -6,30 +6,39 @@ import SubscribeButton from "../SubscribeButton";
 import SubscribeForm from "../Flipcard";
 const PreLaunchPage = () => {
   const [showContent, setShowContent] = useState(false);
- 
+  const [open, setOpen] = useState(false);
   useEffect(() => {
 
     const videoElement = document.getElementById("launchVideo");
     videoElement.addEventListener("ended", () => {
+      // setOpen(true)
+      document.body.style.overflow = "hidden";
       const model = document.getElementById("button");
+
       return model.showModal();
+
     });
+    return () => {
+      document.body.style.overflow = "auto"; // Enable scrolling when component unmounts // Enable scrolling when component unmounts
+    };
   }, []);
 
   const flipPage = () => {
     setShowContent(true);
+    document.body.style.overflow = "auto";
   };
 
+  
   return (
     <>
-      <dialog id="button">
+      <dialog id="button"  >
         <form method="dialog">
           <div
             className={`z-50 fixed top-0 left-0 w-screen h-screen flex justify-center items-center  `}
           >
             <div className="max-w-5xl rounded-2xl">
           
-           <div onClick={flipPage}>
+           <div onClick={flipPage} className="animate">
 
                             <SubscribeButton />
            </div>
