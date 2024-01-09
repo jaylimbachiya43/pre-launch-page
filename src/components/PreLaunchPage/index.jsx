@@ -49,7 +49,7 @@ const PreLaunchPage = () => {
       </div> */}
         {!showContent && (
           <>
-            <div className={` border border-black max-w-4xl rounded-3xl shadow-black shadow-lg overflow-hidden  mx-2 md:mx-6  lg:mx-10  ${showContent ? "animate" : ""}`}>
+            <div className={` border border-black max-w-4xl rounded-3xl shadow-black shadow-lg overflow-hidden  mx-2 md:mx-6  lg:mx-10 md:my-10 ${showContent ? "animate" : ""}`}>
               <video
                 id="launchVideo"
                 className="w-full h-full object-cover"
@@ -75,7 +75,7 @@ const PreLaunchPage = () => {
         )}
         {showContent && (
           <>
-          <div className="text-center max-w-3xl  bg-gray-100 rounded-3xl h-full flex flex-col justify-center content-center object-cover font-medium my-4 mx-2 md:mx-4 px-3 md:px-6 lg:px-10  animate">
+          <div className="text-center max-w-2xl max-h-xl bg-gray-100 rounded-3xl h-full flex flex-col justify-center content-center object-cover font-medium my-4 mx-2 md:mx-4 px-3 md:px-6 lg:px-10 md:my-10  py-4 md:py-0 animate">
   {/* <div className="pb-5 md:pb-8">
     <p className="text-2xl md:text-3xl lg:text-4xl font-bold pb-3 ">Fleurveda introduces</p>
     <p className="text-sm md:text-xl">
@@ -98,7 +98,7 @@ const PreLaunchPage = () => {
     </p>
   </div> */}
 
-<div className="container">
+<div className="">
           <h1 className="text-2xl mb-4">Fleurveda introduces</h1>
           <p className="text-sm mb-4">
             a precise fusion of Science and Ayurveda, transcending the ordinary to elevate your self-care experience!
