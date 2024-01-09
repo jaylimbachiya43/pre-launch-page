@@ -63,7 +63,7 @@ const PreLaunchPage = () => {
                 id="launchVideo"
                 className="w-full h-full object-cover"
                 autoPlay
-                controls
+                
                 loop={false}
               >
                 <source src="/videos/Fleurveda_Final.mp4" type="video/mp4" />
