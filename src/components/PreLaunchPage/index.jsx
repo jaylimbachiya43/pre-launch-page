@@ -62,6 +62,7 @@ const PreLaunchPage = () => {
               <video
                 id="launchVideo"
                 className="w-full h-full object-cover"
+                controls
                 loop={false}
                autoPlay
               >
