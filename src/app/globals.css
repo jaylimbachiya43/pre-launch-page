@@ -17,5 +17,7 @@
 }
 
 body {
- @apply bg-white;
+  background: linear-gradient(90deg, #cfb518, #d8b229);
+  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }

@@ -1,0 +1,61 @@
+/* SubscribeForm.css */
+.wrapper {
+    @apply h-screen flex items-center justify-center bg-gray-100;
+  }
+  
+  .card-content {
+    @apply max-w-2xl bg-white mx-auto p-8 rounded-md shadow-md text-center;
+  }
+  
+  .card-content h1 {
+    @apply text-2xl mb-4;
+  }
+  
+  .card-content p {
+    @apply text-sm mb-4;
+  }
+  
+  .form-input {
+    @apply mb-4;
+  }
+  
+  .form-input input {
+    @apply p-2 w-40 border border-gray-300 rounded-full outline-none text-xs;
+  }
+  
+  .subscribe-btn {
+    @apply p-2 w-40 bg-gradient-to-r from-yellow-500 to-yellow-800 text-white rounded-full outline-none cursor-pointer;
+  }
+  
+  /* #flip-card {
+    @apply transform transition-transform duration-500 ease-in-out opacity-0;
+  } */
+  #flip-card {
+    animation: fadein 1s ease-out, flipY 1s ease-out;
+    transform-origin: center;
+  }
+  
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+      transform: translateY(50%) rotateY(-120deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) rotateY(0);
+    }
+  }
+  
+  @keyframes flipY {
+    0% {
+      transform: perspective(400px) rotateY(-180deg);
+    }
+    100% {
+      transform: perspective(400px) rotateY(0);
+    }
+  }
+  #flip-card.flipped {
+    transform: rotateY(0);
+    opacity: 1;
+  }
+  
