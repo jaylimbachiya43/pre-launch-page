@@ -1,54 +1,54 @@
 "use client";
 import React, { useRef } from "react";
-
+import Styles from "./pageStyle.module.css"
 const page = () => {
   const divRef = useRef();
   const secondDivRef = useRef();
-  const forwardFlipDiv = () => {
-    secondDivRef.current.classList.add("delay-700");
-    divRef.current.classList.remove("delay-700");
-    divRef.current.style.transform = "rotateY(90deg)";
-    secondDivRef.current.classList.add("scale-110");
-    divRef.current.classList.add("scale-90");
-    secondDivRef.current.style.transform = "rotateY(0deg)";
+  const onNextButtonClick = () => {
+    divRef.current.classList.remove(Styles.backwardDivAni)
+    secondDivRef.current.classList.remove(Styles.backwardSecondDivAni)
+    divRef.current.classList.add(Styles.forwardDivAni)
+    secondDivRef.current.classList.add(Styles.forwardSecondDivAni)
+    secondDivRef.current.style.top = 0
   };
 
-  const backwardFlipDiv = () => {
-    divRef.current.classList.add("delay-700");
-    divRef.current.style.transform = "rotateY(0deg)";
-    secondDivRef.current.classList.remove("delay-700");
-    secondDivRef.current.style.transform = "rotateY(90deg)";
+  const onBackButtonClick = () => {
+    divRef.current.classList.remove(Styles.forwardDivAni)
+    secondDivRef.current.classList.remove(Styles.forwardSecondDivAni)
+    divRef.current.classList.add(Styles.backwardDivAni)
+    secondDivRef.current.classList.add(Styles.backwardSecondDivAni)
+    secondDivRef.current.style.top = "100%"
+
   };
 
   return (
     <div className="w-full h-[100dvh] bg-blue-200 flex flex-col gap-5 justify-center items-center">
-      <div className="relative w-1/2 aspect-video">
+      <div className="relative w-1/2 aspect-video overflow-hidden">
         <div
           ref={divRef}
-          className="bg-blue-500 w-full h-full absolute top-0 left-0 rounded-lg flex justify-center items-center transition-all ease-in-out duration-700"
+          className={Styles.fdiv}
         >
           Division to flip
         </div>
         <div
           ref={secondDivRef}
-          className="bg-blue-500 w-full h-full absolute top-0 left-0 rounded-lg flex justify-center items-center transition-all ease-in-out duration-700"
-          style={{ transform: "rotateY(90deg)" }}
+          className={Styles.secondDiv}
         >
           Second Div
         </div>
       </div>
 
       <button
-        onClick={forwardFlipDiv}
+        onClick={onNextButtonClick}
         className="bg-blue-600 rounded-lg px-3 py-2 text-center w-1/3"
       >
-        f flip
+        next
       </button>
       <button
-        onClick={backwardFlipDiv}
+        onClick={onBackButtonClick}
         className="bg-blue-600 rounded-lg px-3 py-2 text-center w-1/3"
       >
-        b flip
+        back
       </button>
     </div>
   );
