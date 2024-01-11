@@ -26,8 +26,8 @@ const page = () => {
   };
 
   return (
-    <div className="w-full h-[100dvh] bg-blue-200 flex flex-col gap-5 justify-center items-center">
-      <div className="relative w-full h-full overflow-hidden">
+    <div className="w-full h-full bg-blue-200 flex flex-col gap-5 justify-center items-center">
+      <div className="relative w-full h-full overflow-hidden min-h-dvh">
         <div ref={divRef} className={Styles.fdiv}>
           {/* <video
             autoPlay="autoplay"
@@ -82,20 +82,19 @@ const page = () => {
               </button>
 
               <p className="text-sm sm:text-base cursor-pointer ">
-                All rights reserved 
-                &copy; 2024
+                All rights reserved &copy; 2024
               </p>
             </div>
           </footer>
         </div>
         <div ref={secondDivRef} className={Styles.secondDiv}>
-          <SubscribeForm />
           <button
             onClick={onBackButtonClick}
-            className="bg-blue-600 rounded-lg px-3 py-2 text-center w-1/3 absolute top-0 left-0 z-30"
+            className="bg-black/20 font-semibold rounded-lg px-3 py-2 text-center w-1/3 mt-5 ml-5"
           >
-            back
+            CLOSE
           </button>
+          <SubscribeForm />
         </div>
       </div>
     </div>
