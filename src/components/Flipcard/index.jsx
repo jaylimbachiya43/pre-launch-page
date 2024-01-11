@@ -4,8 +4,8 @@ import "./flipcard.css";
 
 const SubscribeForm = () => {
   return (
-    <div className="wrapper" id="flip-card">
-      <form className="card-content">
+    <div className="h-full w-full p-5 flex justify-center items-center" id="flip-card">
+      <form className=" w-full h-fit p-5 rounded-lg bg-white">
         <div className="container">
           <h1 className="text-2xl mb-4">Fleurveda introduces</h1>
           <p className="text-sm mb-4">

@@ -19,5 +19,6 @@
 }
 
 .secondDiv {
-  @apply bg-red-800 w-full h-full absolute top-full left-0 rounded-lg flex justify-center items-center transition-all ease-in-out duration-700;
+  @apply w-full h-full absolute top-full left-0 rounded-lg flex justify-center items-center transition-all ease-in-out duration-700;
+  background-color: rgb(255, 249, 237);
 }
