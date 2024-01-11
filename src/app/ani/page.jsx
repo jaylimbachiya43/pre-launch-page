@@ -5,30 +5,30 @@ import Footer from "@/components/Footer";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 import SubscribeForm from "@/components/Flipcard";
 
-const page = () => {
-  const divRef = useRef();
-  const secondDivRef = useRef();
+const Page = () => {
+  const DivRef = useRef();
+  const SecondDivRef = useRef();
 
   const onNextButtonClick = () => {
-    divRef.current.classList.remove(Styles.backwardDivAni);
-    secondDivRef.current.classList.remove(Styles.backwardSecondDivAni);
-    divRef.current.classList.add(Styles.forwardDivAni);
-    secondDivRef.current.classList.add(Styles.forwardSecondDivAni);
-    secondDivRef.current.style.top = 0;
+    DivRef.current.classList.remove(Styles.backwardDivAni);
+    SecondDivRef.current.classList.remove(Styles.backwardSecondDivAni);
+    DivRef.current.classList.add(Styles.forwardDivAni);
+    SecondDivRef.current.classList.add(Styles.forwardSecondDivAni);
+    SecondDivRef.current.style.top = 0;
   };
 
   const onBackButtonClick = () => {
-    divRef.current.classList.remove(Styles.forwardDivAni);
-    secondDivRef.current.classList.remove(Styles.forwardSecondDivAni);
-    divRef.current.classList.add(Styles.backwardDivAni);
-    secondDivRef.current.classList.add(Styles.backwardSecondDivAni);
-    secondDivRef.current.style.top = "100%";
+    DivRef.current.classList.remove(Styles.forwardDivAni);
+    SecondDivRef.current.classList.remove(Styles.forwardSecondDivAni);
+    DivRef.current.classList.add(Styles.backwardDivAni);
+    SecondDivRef.current.classList.add(Styles.backwardSecondDivAni);
+    SecondDivRef.current.style.top = "100%";
   };
 
   return (
     <div className="w-full h-full bg-blue-200 flex flex-col gap-5 justify-center items-center">
       <div className="relative w-full h-full overflow-hidden min-h-dvh">
-        <div ref={divRef} className={Styles.fdiv}>
+        <div ref={DivRef} className={Styles.fdiv}>
           {/* <video
             autoPlay="autoplay"
             loop="loop"
@@ -87,7 +87,7 @@ const page = () => {
             </div>
           </footer>
         </div>
-        <div ref={secondDivRef} className={Styles.secondDiv}>
+        <div ref={SecondDivRef} className={Styles.secondDiv}>
           <button
             onClick={onBackButtonClick}
             className="bg-black/20 font-semibold rounded-lg px-3 py-2 text-center w-1/3 mt-5 ml-5"
@@ -101,4 +101,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
