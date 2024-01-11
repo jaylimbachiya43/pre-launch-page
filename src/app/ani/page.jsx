@@ -1,55 +1,64 @@
 "use client";
 import React, { useRef } from "react";
-import Styles from "./pageStyle.module.css"
+import Styles from "./pageStyle.module.css";
+import Footer from "@/components/Footer";
 const page = () => {
   const divRef = useRef();
   const secondDivRef = useRef();
+
   const onNextButtonClick = () => {
-    divRef.current.classList.remove(Styles.backwardDivAni)
-    secondDivRef.current.classList.remove(Styles.backwardSecondDivAni)
-    divRef.current.classList.add(Styles.forwardDivAni)
-    secondDivRef.current.classList.add(Styles.forwardSecondDivAni)
-    secondDivRef.current.style.top = 0
+    divRef.current.classList.remove(Styles.backwardDivAni);
+    secondDivRef.current.classList.remove(Styles.backwardSecondDivAni);
+    divRef.current.classList.add(Styles.forwardDivAni);
+    secondDivRef.current.classList.add(Styles.forwardSecondDivAni);
+    secondDivRef.current.style.top = 0;
   };
 
   const onBackButtonClick = () => {
-    divRef.current.classList.remove(Styles.forwardDivAni)
-    secondDivRef.current.classList.remove(Styles.forwardSecondDivAni)
-    divRef.current.classList.add(Styles.backwardDivAni)
-    secondDivRef.current.classList.add(Styles.backwardSecondDivAni)
-    secondDivRef.current.style.top = "100%"
-
+    divRef.current.classList.remove(Styles.forwardDivAni);
+    secondDivRef.current.classList.remove(Styles.forwardSecondDivAni);
+    divRef.current.classList.add(Styles.backwardDivAni);
+    secondDivRef.current.classList.add(Styles.backwardSecondDivAni);
+    secondDivRef.current.style.top = "100%";
   };
 
   return (
     <div className="w-full h-[100dvh] bg-blue-200 flex flex-col gap-5 justify-center items-center">
-      <div className="relative w-1/2 aspect-video overflow-hidden">
-        <div
-          ref={divRef}
-          className={Styles.fdiv}
-        >
-          Division to flip
+      <div className="relative w-full h-full overflow-hidden">
+        <div ref={divRef} className={Styles.fdiv}>
+          <video
+            autoPlay="autoplay"
+            loop="loop"
+            muted
+            className="object-contain"
+            src="/videos/Fleurveda_Final.mp4"
+          ></video>
+          <button
+            onClick={onNextButtonClick}
+            className="bg-blue-600 rounded-lg px-3 py-2 text-center w-1/3 absolute bottom-0 left-1/2 -translate-x-1/2 z-40"
+          >
+            next
+          </button>
+          <div className="absolute bottom-0 right-0 w-full h-fit z-30">
+            {/* <footer className="bg-black text-white p-4">
+              <div className="container w-full text-right">
+                <p className="text-sm sm:text-base">
+                  All rights reserved &copy; 2024
+                </p>
+              </div>
+            </footer> */}
+          </div>
         </div>
-        <div
-          ref={secondDivRef}
-          className={Styles.secondDiv}
-        >
+        <div ref={secondDivRef} className={Styles.secondDiv}>
           Second Div
+          <button
+            onClick={onBackButtonClick}
+            className="bg-blue-600 rounded-lg px-3 py-2 text-center w-1/3 absolute top-0 left-0 z-30"
+          >
+            back
+          </button>
         </div>
       </div>
-
-      <button
-        onClick={onNextButtonClick}
-        className="bg-blue-600 rounded-lg px-3 py-2 text-center w-1/3"
-      >
-        next
-      </button>
-      <button
-        onClick={onBackButtonClick}
-        className="bg-blue-600 rounded-lg px-3 py-2 text-center w-1/3"
-      >
-        back
-      </button>
     </div>
   );
 };
